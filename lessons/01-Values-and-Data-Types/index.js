@@ -5,7 +5,8 @@
  * Assign it the string of your name.
  */
 
-// Replace this comment with your code.
+const myFirstName = "Andrew"
+
 
 /**
  * #2: What's your age?
