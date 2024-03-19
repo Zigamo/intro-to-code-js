@@ -24,7 +24,7 @@ import {
  *
  * To test your answers to one of the problems above:
  * 1. Find the number of the problem you're working on
- * 2. Remove the `x` in `xdescribe` so that it reads `describe`
+ * 2. Remove the `x` in `xdescribe` so that it reads `describe`, and save this file.
  * 3. Type `npm run test-01` in the Shell and hit Enter.
  */
 
