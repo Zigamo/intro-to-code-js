@@ -58,7 +58,8 @@ const isUndefined = undefined
  * Pass numA and numB in as variables, not as their values.
  */
 
-// Replace this comment with your code.
+let numA = "15"
+let numB = "3"
 
 /**
  * #6: Values are more than values
