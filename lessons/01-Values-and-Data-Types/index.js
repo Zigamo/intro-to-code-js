@@ -24,7 +24,7 @@ let myAge = "30"
  * There's only one right answer here.
  */
 
-// Replace this comment with your code.
+const codingIsFun = true
 
 /**
  * #4: Null and undefined
