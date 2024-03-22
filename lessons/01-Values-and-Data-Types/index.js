@@ -36,7 +36,7 @@ const codingIsFun = true
  * Assign the value null to isNull and the value undefined to isUndefined.
  */
 
-// Replace this comment with your code.
+const isNull = null
 
 /**
  * #5: Quickest math class ever
