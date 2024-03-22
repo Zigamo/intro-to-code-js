@@ -37,6 +37,7 @@ const codingIsFun = true
  */
 
 const isNull = null
+const isUndefined = undefined
 
 /**
  * #5: Quickest math class ever
