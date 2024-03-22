@@ -15,7 +15,7 @@ const myFirstName = "Andrew"
  * Assign it the value of your age.
  */
 
-// Replace this comment with your code.
+let myAge = "30"
 
 /**
  * #3: In fact, it's super fun.
