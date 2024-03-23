@@ -60,6 +60,7 @@ const isUndefined = undefined
 
 let numA = "15"
 let numB = "3"
+const addedTo = `Adding numA and numB gives me ${numA + numB}.`
 
 /**
  * #6: Values are more than values
