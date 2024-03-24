@@ -15,7 +15,7 @@ const myFirstName = "Andrew"
  * Assign it the value of your age.
  */
 
-let myAge = "30"
+let myAge = 30
 
 /**
  * #3: In fact, it's super fun.
@@ -75,7 +75,9 @@ const exponentiatedTo = `${numA ** numB}`
  * Define the variable funType. Assign it the expression (don't solve) that determines what type funType is.
  */
 
-// Replace this comment with your code.
+const nameType = (typeof myFirstname)
+const ageType = (typeof myAge)
+const funType = (typeof codingIsFun)
 
 /**
  * #7: Numbers and Words, all together
