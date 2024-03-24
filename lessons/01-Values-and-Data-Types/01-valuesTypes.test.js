@@ -49,7 +49,7 @@ describe("01 - Values and Types", () => {
     });
   });
 
-  xdescribe("#3: In fact, it's super fun", () => {
+  describe("#3: In fact, it's super fun", () => {
     describe("The variable codingIsFun", () => {
       it("should be a boolean value", () => {
         expect(codingIsFun).to.be.a("boolean");
@@ -61,7 +61,7 @@ describe("01 - Values and Types", () => {
     });
   });
 
-  xdescribe("#4: Null and undefined", () => {
+  describe("#4: Null and undefined", () => {
     it("isNull -> should have a `null` value", () => {
       expect(isNull).to.be.a("null");
     });
