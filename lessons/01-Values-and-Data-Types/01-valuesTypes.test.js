@@ -71,7 +71,7 @@ describe("01 - Values and Types", () => {
     });
   });
 
-  xdescribe("#5: Quickest Math Class Ever", () => {
+  describe("#5: Quickest Math Class Ever", () => {
     describe("Variable declarations and value assignements", () => {
       it("numA -> assigned a number value of 15", () => {
         expect(numA).to.be.a("number");
@@ -105,7 +105,7 @@ describe("01 - Values and Types", () => {
     });
   });
 
-  xdescribe("#6: Values are more than values", () => {
+  describe("#6: Values are more than values", () => {
     it("nameType -> correctly evaluates type", () => {
       expect(nameType).to.be.a("string");
       expect(nameType).to.equal("string");
