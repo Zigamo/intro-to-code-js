@@ -120,7 +120,7 @@ describe("01 - Values and Types", () => {
     });
   });
 
-  xdescribe("#7: Numbers and words, all together", () => {
+  describe("#7: Numbers and words, all together", () => {
     it("myDetails -> is a string", () => {
       expect(myDetails).to.be.a("string");
     });
