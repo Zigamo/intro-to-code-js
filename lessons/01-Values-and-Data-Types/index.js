@@ -58,8 +58,8 @@ const isUndefined = undefined
  * Pass numA and numB in as variables, not as their values.
  */
 
-let numA = "15"
-let numB = "3"
+let numA = 15
+let numB = 3
 const addedTo = `Adding numA and numB gives me ${numA + numB}.`
 const subtractedBy = `${numA - numB}`
 const multipliedBy = `${numA * numB}`
