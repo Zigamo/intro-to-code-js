@@ -60,7 +60,7 @@ const isUndefined = undefined
 
 let numA = 15
 let numB = 3
-const addedTo = `Adding numA and numB gives me ${numA + numB}.`
+const addedTo = `Adding ${numA} and ${numB} gives me ${numA + numB}.`
 const subtractedBy = `${numA - numB}`
 const multipliedBy = `${numA * numB}`
 const dividedBy = `${numA / numB}`
@@ -75,7 +75,7 @@ const exponentiatedTo = `${numA ** numB}`
  * Define the variable funType. Assign it the expression (don't solve) that determines what type funType is.
  */
 
-const nameType = (typeof myFirstname)
+const nameType = (typeof myFirstName)
 const ageType = (typeof myAge)
 const funType = (typeof codingIsFun)
 
