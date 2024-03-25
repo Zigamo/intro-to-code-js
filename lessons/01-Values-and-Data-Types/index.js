@@ -91,7 +91,7 @@ const funType = (typeof codingIsFun)
  * SEE: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#expression_interpolation
  */
 
-// Replace this comment with your code.
+let myDetails = `My name is ${myFirstName} and I am ${myAge} years old`
 
 /**
  * Needed for test to work; please do not touch
