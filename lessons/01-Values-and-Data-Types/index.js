@@ -71,13 +71,13 @@ const exponentiatedTo = numA ** numB
  * #6: Values are more than values
  *
  * Define the variable nameType. Assign it the expression (don't solve) that determines what type myFirstName is.
- * Define the variable ageType. Assign it the expression (don't solve) that determines what type ageType is.
- * Define the variable funType. Assign it the expression (don't solve) that determines what type funType is.
+ * Define the variable ageType. Assign it the expression (don't solve) that determines what type myAge is.
+ * Define the variable funType. Assign it the expression (don't solve) that determines what type codingIsFun is.
  */
 
-const nameType = (typeof myFirstName)
-const ageType = (typeof myAge)
-const funType = (typeof codingIsFun)
+const nameType = typeof myFirstName
+const ageType = typeof myAge
+const funType = typeof codingIsFun
 
 /**
  * #7: Numbers and Words, all together
