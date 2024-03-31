@@ -21,10 +21,11 @@ const givenTwo = "cheese" === "cheese"; // true
 const givenThree = 15 / 3 === 5; // true
 const givenFour = 12 > 13; // false
 
-const andTrue === true
-const andFalse  === false
-const orTrue == true
-const orFalse  == false
+const andTrue = true
+const andFalse = false
+const orTrue = true
+const orFalse = false
+
 
 /**
  * #2: fiveCharacters
