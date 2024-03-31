@@ -21,7 +21,10 @@ const givenTwo = "cheese" === "cheese"; // true
 const givenThree = 15 / 3 === 5; // true
 const givenFour = 12 > 13; // false
 
-// Replace this comment with your code.
+const andTrue = (givenTwo && givenThree)
+const andFalse = (givenOne && givenFour)
+const orTrue = (givenTwo || givenFour)
+const orFalse = (givenOne = givenThree)
 
 /**
  * #2: fiveCharacters
