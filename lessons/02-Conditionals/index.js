@@ -21,10 +21,10 @@ const givenTwo = "cheese" === "cheese"; // true
 const givenThree = 15 / 3 === 5; // true
 const givenFour = 12 > 13; // false
 
-const andTrue = givenTwo && givenThree
-const andFalse = givenOne && givenFour
-const orTrue = givenTwo || givenFour
-const orFalse = givenOne || givenFour
+const andTrue = (givenTwo && givenThree)
+const andFalse = (givenOne && givenFour)
+const orTrue = (givenTwo || givenFour)
+const orFalse = (givenOne || givenFour)
 export {
   andTrue,
   andFalse,
