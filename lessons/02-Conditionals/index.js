@@ -74,6 +74,10 @@ const isItFiveChars = notFiveChars ? "not 5 characters" : "it's 5 characters"
 function numberOrString(value) {
   return "String"
     ? "This is a string"
+      ? 5
+      : "This is a number"
+        ? true
+        : "This is not a string nor a number"
     : true;
 }
 
