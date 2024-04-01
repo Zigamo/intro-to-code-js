@@ -49,7 +49,7 @@ export {
  */
 
 const notFiveChars = "Four"
-const isItFiveChars = notFiveChars ? "it\'s 5 Characters" : "not 5 characters"
+const isItFiveChars = notFiveChars ? "it's 5 characters" : "not 5 characters"
 
 
 /**
