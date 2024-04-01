@@ -48,7 +48,9 @@ export {
  * Ternary: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
  */
 
-// Replace this comment with your code.
+const notFiveChars = "Four"
+const isItFiveChars = notFiveChars ? "it's 5 Characters" : "not 5 characters"
+
 
 /**
  * #3: numberOrString
@@ -196,4 +198,6 @@ export {
   letsGoParty,
   testGrader,
   daysInTheMonth,
+  notFiveChars,
+  isItFiveChars,
 };
