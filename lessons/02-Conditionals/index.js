@@ -78,7 +78,7 @@ function numberOrString(value) {
       ? "This is a number"
       : true
         ? "This is not a string nor a number"
-
+        : now;
 }
 
 /**
