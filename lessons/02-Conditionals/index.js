@@ -137,7 +137,12 @@ function truthyFalsy(value) {
  */
 
 function letsGoParty(legalAge, outfitType, hasCoverCharge) {
-  // Replace this comment with your code.
+  if (legalAge <= 25)
+  return "Go home, no partying for you tonight."
+if (outfitType !== "pool party")
+return "Go home, no partying for you tonight."
+if (hasCoverCharge === false)
+return "Go home, no partying for you tonight.";
 }
 
 /**
