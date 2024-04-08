@@ -172,7 +172,16 @@ else return "Let's go party!";
  */
 
 function testGrader(grade) {
-  // Replace this comment with your code.
+  if (grade >= 90)
+  return "A"
+if (grade >= 80 < 90)
+return "B"
+if (grade >= 70 < 80)
+return "C"
+if (grade >= 60 < 70)
+return "D"
+if (grade < 60)
+return "F";
 }
 
 /**
