@@ -142,7 +142,8 @@ function letsGoParty(legalAge, outfitType, hasCoverCharge) {
 if (outfitType !== "pool party")
 return "Go home, no partying for you tonight."
 if (hasCoverCharge === false)
-return "Go home, no partying for you tonight.";
+return "Go home, no partying for you tonight."
+else "Let's go party!";
 }
 
 /**
