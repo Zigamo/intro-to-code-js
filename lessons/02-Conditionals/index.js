@@ -212,8 +212,8 @@ function daysInTheMonth(month) {
 if (month === 4, 6, 9, 11)
 return 30
 if (month === 2)
-return 28;
-else if (month > 12 || month < 1)
+return 28
+if (month > 12 || month < 1)
 return "Not a valid month.";
 }
 
