@@ -111,7 +111,8 @@ function numberOrString(value) {
  */
 
 function truthyFalsy(value) {
-  // Replace this comment with your code.
+  if (value !=== true)
+  "false"
 }
 
 /**
