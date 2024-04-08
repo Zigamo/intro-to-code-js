@@ -208,13 +208,13 @@ return "F";
 
 function daysInTheMonth(month) {
   if (month === 1 , 3, 5, 7, 8, 10, 12)
-  return 31;
-else if (month !== 1, 3, 5, 7, 8, 10, 12)
-return "Not a valid month."
+  return 31
 if (month === 4, 6, 9, 11)
 return 30
 if (month === 2)
 return 28;
+else if (month > 12)
+return "Not a valid month.";
 }
 
 export {
