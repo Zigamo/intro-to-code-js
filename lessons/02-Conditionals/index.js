@@ -21,16 +21,10 @@ const givenTwo = "cheese" === "cheese"; // true
 const givenThree = 15 / 3 === 5; // true
 const givenFour = 12 > 13; // false
 
-const andTrue = (givenTwo && givenThree)
-const andFalse = (givenOne && givenFour)
-const orTrue = (givenTwo || givenFour)
-const orFalse = (givenOne || givenFour)
-export {
-  andTrue,
-  andFalse,
-  orTrue,
-  orFalse,
-};
+export const andTrue = (givenTwo && givenThree)
+export const andFalse = (givenOne && givenFour)
+export const orTrue = (givenTwo || givenFour)
+export const orFalse = (givenOne || givenFour)
 
 /**
  * #2: fiveCharacters
@@ -49,7 +43,8 @@ export {
  */
 
 const notFiveChars = "Four"
-const isItFiveChars = notFiveChars ? "not 5 characters" : "it's 5 characters"
+// const isItFiveChars = notFiveChars ? "not 5 characters" : "it's 5 characters"
+const isItFiveChars = notFiveChars.length ? "not 5 characters" : "it's 5 characters"
 
 
 /**
@@ -63,6 +58,7 @@ const isItFiveChars = notFiveChars ? "not 5 characters" : "it's 5 characters"
  * - "This is not a string nor a number" if it's neither
  *
  * SEE:
+ * - typeof operator: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
  * - return statement: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return
  *
  * @category 02 - Conditionals
@@ -70,15 +66,15 @@ const isItFiveChars = notFiveChars ? "not 5 characters" : "it's 5 characters"
  * @param {unknown} value
  * @returns {string}
  */
-
+// Andrew's version
 function numberOrString(value) {
-  return "string"
-    ? "This is a string"
-    : 5
-      ? "This is a number"
-      : 5
-        ? "This is not a string nor a number"
-        : true;
+  if (typeof value === "string") {
+    return "This is a string"
+  } else if (typeof value === "number") {
+    return "This is a number"
+  } else if (typeof value !== "string" || typeof value !== "number") {
+    return "This is not a string nor a number"
+  }
 }
 
 /**
@@ -110,10 +106,59 @@ function numberOrString(value) {
  * @returns {boolean}
  */
 
+// function truthyFalsy(value) {
+//   if (value !== true)
+//   false;
+// }
+
+// There are a number of ways to complete this function, one of which combines different expressions to test using the Logical OR (||) to create a single case that'll return false on ANY of the matching expressions.
+// You don't need an `else` to go with the if-statement because you simply `return true` if you don't enter the `if` code block. If there were more instructions to be run after that if-statement, then an `else` might be needed.
+
+// function truthyFalsy(value) {
+//   if (
+//     value === 0 ||
+//     value === "" ||
+//     value === null ||
+//     value === false ||
+//     value === undefined
+//   ) {
+//     return false;
+//   }
+//   return true;
+// }
+
+// Another way to do this problem is by using a switch statement.
+// The fact that you are asked to return false given a number of different conditions makes this a good situation for the switch statement.
+// You catch all the matching cases under one return and the default statement catches all other value possibilities.
+
 function truthyFalsy(value) {
-  if (value !== true)
-  false;
+  switch (value) {
+    case 0:
+    case "":
+    case null:
+    case undefined:
+    case false:
+      return false;
+    default:
+      return true;
+  }
 }
+
+/**
+ * CHALLENGE ANSWER:
+ * Using ! to negate the incoming value forces the value into a Boolean and negates it.
+ * This is done to force a value to work in a Boolean context.
+ */
+
+// function truthyFalsy(value) {
+//   console.log("value before forcing into Boolean with !:", value);
+//   if (!value) {
+//     console.log("same value after:", !value);
+//     return false;
+//   }
+//   console.log("same value after:", !value);
+//   return true;
+// }
 
 /**
  * #5: letsGoParty
@@ -136,14 +181,20 @@ function truthyFalsy(value) {
  * @returns {string}
  */
 
+// function letsGoParty(legalAge, outfitType, hasCoverCharge) {
+//   if (legalAge <= 25) { return "Go home, no partying for you tonight." }
+//   if (outfitType !== "pool party") { return "Go home, no partying for you tonight." }
+//   if (hasCoverCharge === false) { return "Go home, no partying for you tonight." }
+//   else { return "Let's go party!" }
+// }
+
+// Christian answer
 function letsGoParty(legalAge, outfitType, hasCoverCharge) {
-  if (legalAge <= 25)
-  return "Go home, no partying for you tonight."
-if (outfitType !== "pool party")
-return "Go home, no partying for you tonight."
-if (hasCoverCharge === false)
-return "Go home, no partying for you tonight."
-else return "Let's go party!";
+  if (legalAge < 25 || outfitType !== "pool party" || !hasCoverCharge) {
+    return "Go home, no partying for you tonight.";
+  }
+
+  return "Let's go party!";
 }
 
 /**
@@ -171,17 +222,39 @@ else return "Let's go party!";
  * @returns {string}
  */
 
+// function testGrader(grade) {
+//   if (grade >= 90)
+//     return "A"
+//   if (grade >= 80 && grade < 90)
+//     return "B"
+//   if (grade >= 70 && grade < 80)
+//     return "C"
+//   if (grade >= 60 && grade < 70)
+//     return "D"
+//   if (grade < 60 && grade >= 0)
+//     return "F"
+// }
+
+// Christian answer
+// First we need a guard clause to filter out invalid values and return the appropriate error.
+// Then, we connect various if and else-if statements with a final else because we have multiple different conditions to test, each with their own return statement.
 function testGrader(grade) {
-  if (grade >= 90)
-  return "A"
-if (grade >= 80 < 90)
-return "B"
-if (grade >= 70 < 80)
-return "C"
-if (grade >= 60 < 70)
-return "D"
-if (grade < 60)
-return "F";
+  // guard clause: handle all invalid stuff
+  if (grade < 0 || grade > 100 || typeof grade !== "number") {
+    return "Not a valid grade.";
+  }
+
+  if (grade >= 90) {
+    return "A";
+  } else if (grade >= 80) {
+    return "B";
+  } else if (grade >= 70) {
+    return "C";
+  } else if (grade >= 60) {
+    return "D";
+  } else if (grade >= 0) {
+    return "F";
+  }
 }
 
 /**
@@ -206,15 +279,40 @@ return "F";
  * @returns {28 | 30 | 31 | "Not a valid month."}
  */
 
+// function daysInTheMonth(month) {
+//   if (month === 1, 3, 5, 7, 8, 10, 12)
+//     return 31
+//   if (month === 4, 6, 9, 11)
+//     return 30
+//   if (month === 2)
+//     return 28
+//   if (month > 12 || month < 1)
+//     return "Not a valid month.";
+// }
+
+// Christian answer
+// This is a problem where many different conditions resolve to the same result. We have many possible results so this is a great place to use a switch statement.
+
 function daysInTheMonth(month) {
-  if (month === 1 , 3, 5, 7, 8, 10, 12)
-  return 31
-if (month === 4, 6, 9, 11)
-return 30
-if (month === 2)
-return 28
-if (month > 12 || month < 1)
-return "Not a valid month.";
+  switch (month) {
+    case 1:
+    case 3:
+    case 5:
+    case 7:
+    case 8:
+    case 10:
+    case 12:
+      return 31;
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+      return 30;
+    case 2:
+      return 28;
+    default:
+      return "Not a valid month.";
+  }
 }
 
 export {
