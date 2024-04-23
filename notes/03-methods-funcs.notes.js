@@ -81,3 +81,30 @@ function printPet() {
 }
 // printPet()
 // console.log("global", pet) // undefined
+
+
+// console.log(myNum)
+
+// { const myNum = 421 }
+// console.log(myNum)
+
+// x = 100
+
+
+// {
+//     console.log(x) // returns ReferenceError, because there's a locally scoped DEFINITION
+//     // CANNOT use vars before assignment
+//     let x = 101
+
+//     console.log(x)
+// }
+
+console.log(square(5))
+
+// function square(n) {
+//     return n * n
+// }
+
+const square = function (n) {
+    return n * n
+}

@@ -1,5 +1,29 @@
 # Methods/Functions & Scope
 
+- [Methods/Functions \& Scope](#methodsfunctions--scope)
+  - [What is a function?](#what-is-a-function)
+    - [What makes an object first-class?](#what-makes-an-object-first-class)
+  - [Anatomy of a Function](#anatomy-of-a-function)
+  - [Types of Functions](#types-of-functions)
+    - [Standard function declaration](#standard-function-declaration)
+    - [Anonymous Function (usually assigned somewhere)](#anonymous-function-usually-assigned-somewhere)
+    - [Named Function Expressions](#named-function-expressions)
+  - [Arrow Functions](#arrow-functions)
+  - [Invoking (calling) functions](#invoking-calling-functions)
+  - [Scope: when things belong to some things, but some OTHER things](#scope-when-things-belong-to-some-things-but-some-other-things)
+    - [Global scope](#global-scope)
+    - [Local Scope](#local-scope)
+    - [Function Scope](#function-scope)
+    - [Block Scope](#block-scope)
+  - [Hoisting](#hoisting)
+    - [Why do we care about hoisting?](#why-do-we-care-about-hoisting)
+    - [What JS concepts use these hoisting definitions?](#what-js-concepts-use-these-hoisting-definitions)
+    - [Hoisting](#hoisting-1)
+      - [Scopes and Local Declarations](#scopes-and-local-declarations)
+      - [Functions](#functions)
+  - [Reference Links](#reference-links)
+
+
 ## What is a function?
 
 - A function is a reusable block of code that generally takes some input and returns some output.
@@ -26,7 +50,7 @@ There are 4 main parts to a function:
 - A `return` statement which ends function execution and specifies a value to be returned, even if the value is `undefined`.
   - Returning a value is not the same as logging a value.
   - A returned value can be stored and re-used elsewhere versus a logged value which just appears in the terminal to show you the selected value.
-  - Return statments are typically placed at the end of a branch of your function's control flow.
+  - Return statements are typically placed at the end of a branch of your function's control flow.
   - You can also use a return to interrupt the block of code and immediately break out of a function.
   - You can also return functions from functions (closures)
 
@@ -98,6 +122,7 @@ const threeParamArrow = (param1, param2, param3) => {}
 - Defining a function does not execute it; Calling a function actually preforms the specified function instructions.
 - Functions can call themselves recursively.
   - Functional Recursion is when a function calls itself inside of its own definition.
+  - To kill a call stack gone wild, `Ctrl-C`
 
 ```js
 // THIS is a recursive definition, even though nothing is returned. All recursion requires is an invocation.
@@ -249,8 +274,103 @@ printPet()
 console.log("global", pet) // undefined
 ```
 
+## Hoisting
+
+- Hoisting is the concept that functions are always at the top of their scope.
+
+### Why do we care about hoisting?
+
+Here are some examples of hoisting in action:
+
+- Value hoisting: Being able to use a variables value in its scope before the line is declared.
+- Declaration hoisting: being able to reference a variable in its scope before the line is declared, without a reference error. Here values are always `undefined`
+- #3: Declaration of a variable causing behavior changes in its scope before the line in which it's declared
+- #4: Side effects of a declaration are produced before evaluating the rest of the code that contains it.
+
+### What JS concepts use these hoisting definitions?
+
+- Value hoisting: is something all function declarations (function keyword) follow; import declarations too
+- Declaration hoisting: Variables using the `var` declaration keyword follows this type of hoisting; this is bad and the main reason we never use `var`
+- Type 3: Declarations using let, const, and class 
+- Type 4: Import declarations
+
+### Hoisting
+
+```js
+// Not value hoisted
+
+console.log(num); // returns ReferenceError, as it should
+const num = "treefitty"; 
+
+// let-declared variables also produce this reliable error
+```
+
+`var` is terrible.
+
+```js
+console.log(myNum) // undefined
+
+var myNum = 421
+console.log(myNum) // 421
+```
+
+And if there was a random assignment earlier in the code...
+
+```js
+myNum = "not a num"
+
+// other random code
+
+console.log(myNum) // "not a num"
+
+var myNum = 421
+console.log(myNum) // 421
+```
+
+#### Scopes and Local Declarations
+
+
+```js
+let z = 100;
+
+{
+  console.log(z); // returns ReferenceError, because there's a locally scoped DEFINITION
+  // CANNOT use vars before assignment
+  let z = 101 // local z declaration, different from outer z
+}
+```
+
+#### Functions
+
+```js
+console.log(square(5)); // prints 25
+
+function square(n) {
+  return n * n;
+}
+
+// the compiler reads the above like this:
+
+// All function declarations are effectively at the top of the scope
+function square(n) {
+  return n * n;
+}
+
+console.log(square(5)); // 25
+```
+
+Does not work with function expression because you are storing the definition as a value in a variable. The variable is `const` declared, so it reference errors.
+
+```js
+console.log(square(5)); // ReferenceError: Cannot access 'square' before initialization
+
+const square = function (n) {
+  return n * n;
+};
+```
 ----
 
 ## Reference Links
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments
+- https://developer.mozilla.org/en-US/docs/Glossary/Hoisting
